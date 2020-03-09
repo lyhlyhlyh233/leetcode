@@ -25,16 +25,16 @@ public class TwoSum {
     public int[] twoSum1(int[] nums, int target) {
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            int teammate =  target - nums[i];
-            if(hashMap.get(teammate)!=null){
-                return  new int[]{hashMap.get(teammate),i};
-            }
             hashMap.put(nums[i], i);
         }
-        return  null;
+        for (int i = 0; i < nums.length; i++) {
+            int teammate = target - nums[i];
+            if (hashMap.get(teammate) != null ) {
+                return new int[]{hashMap.get(teammate), i};
+            }
+        }
+        return null;
     }
-
-
 
 
     public static void main(String[] args) {
