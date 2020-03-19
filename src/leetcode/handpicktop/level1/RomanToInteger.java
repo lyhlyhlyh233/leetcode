@@ -37,20 +37,20 @@ public class RomanToInteger {
         map.put("M",1000);
         map.put("IV",4);
         map.put("IX",9);
-        map.put("IL",40);
-        map.put("IC",90);
-        map.put("ID",400);
-        map.put("IM",900);
+        map.put("XL",40);
+        map.put("XC",90);
+        map.put("CD",400);
+        map.put("CM",900);
         return map;
     }
     public int romanToInt(String s) {
           HashMap<String,Integer> dic= initMap();
           int sum = 0;
           for(int i = 0 ;i<s.length();i++){
-               int v = dic.get(s.charAt(i));
+               int v = dic.get(s.charAt(i)+"");
                int v1 = 0;
                if(i<s.length()-1){
-                   v1 = dic.get(s.charAt(i+1));
+                   v1 = dic.get(s.charAt(i+1)+"");
                }
                if(v<v1){
                     String temp = s.substring(i,i+2);
@@ -65,6 +65,6 @@ public class RomanToInteger {
     }
 
     public static void main(String[] args) {
-        new RomanToInteger().romanToInt("XII");
+        new RomanToInteger().romanToInt("MCMXCIV");
     }
 }
