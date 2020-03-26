@@ -44,7 +44,7 @@ public class PlusOne {
            else return  digits1;
     }
     public int[] plusOne1(int[] digits){
-        
+        return  null;
     }
 
 }
