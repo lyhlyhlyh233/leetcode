@@ -14,19 +14,40 @@ public class CountPrimes {
      * @param n
      * @return
      */
-    public boolean isPrimes(int n){
+    public static boolean isPrimes(int n){
         if(n<2) return  false;
-        for(int i = 2 ; i< n/2+1 ;i++){
+        for(int i = 2 ; i * i < n ;i++){
             if(n%i==0)
                 return  false;
         }
         return  true;
     }
-    public int countPrimes(int n) {
+    public static int countPrimes(int n) {
+            boolean[] isP = new boolean[n];
+            for(int m = 0 ; m < n ;m++){
+                isP[m] = true;
+              }
             int count =0;
-            for(int i = 2 ; i < n ; i++){
-                if(isPrimes(i)) count++;
+            for(int i = 0 ; i < n ; i++){
+                if(isP[i]){
+                    if(isPrimes(i)){
+                        isP[i]=true;
+                        for(int k=2 ;  ; k++){
+                            int j = k*i;
+                            if(!(j<n)) break;
+                            isP[j] = false;
+                        }
+                    }
+                    else   isP[i] = false;
+                }
+            }
+            for(int x = 0 ; x<n;x++){
+                if(isP[x]) count++;
             }
             return  count;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(countPrimes(10));
     }
 }
