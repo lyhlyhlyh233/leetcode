@@ -1,4 +1,4 @@
-package leetcode.handpicktop.level1review;
+package leetcode.handpicktop.level1reviewday1;
 
 import java.util.Arrays;
 
