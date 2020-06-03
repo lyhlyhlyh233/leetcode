@@ -39,12 +39,9 @@ public class ReverseLinkedList {
         ListNode index = head;
         while(index!=null){
             ListNode temp = index.next; //temp指向下一个
-
             index.next = headNew;
             headNew = index;
-
             index = temp;
-
         }
         return  headNew;
     }
