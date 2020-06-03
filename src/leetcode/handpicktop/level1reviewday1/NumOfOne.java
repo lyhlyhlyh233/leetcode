@@ -13,7 +13,7 @@ public class NumOfOne {
             if((n&1)==1) {
                 sum++;
             }
-            n=n>>1;
+            n=n>>>1;
         }
         return sum;
     }
