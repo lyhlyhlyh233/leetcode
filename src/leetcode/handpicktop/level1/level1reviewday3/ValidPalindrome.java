@@ -1,19 +1,14 @@
 package leetcode.handpicktop.level1.level1reviewday3;
 
 public class ValidPalindrome {
+    //可用双指针，去掉转换字符串的第一步
     public  static  boolean isPalindrome(String s) {
-        s = s.toLowerCase().replaceAll("[^a-z]|[^0-9]","");
-        int i = 0 , j = s.length();
-        while(i<j){
-            if(s.charAt(i)!=s.charAt(j)) return false;
-            else {
-                i++;j--;
-            }
-        }
-        return  true;
+        s = s.toLowerCase().replaceAll("[^a-z0-9]","");
+        StringBuffer sb = new StringBuffer(s);
+        return  sb.reverse().toString().equals(s);
     }
 
     public static void main(String[] args) {
-        isPalindrome("race a car");
+        isPalindrome("A man, a plan, a canal: Panama");
     }
 }
