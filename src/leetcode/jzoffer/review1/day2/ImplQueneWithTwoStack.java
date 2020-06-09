@@ -10,7 +10,7 @@ import java.util.Deque;
 public class ImplQueneWithTwoStack {
         private Deque<Integer> stack1;
         private  Deque<Integer> stack2;
-        public CQueue() {
+        public ImplQueneWithTwoStack() {
                 stack1 = new ArrayDeque<>();
                 stack2 = new ArrayDeque<>();
         }
