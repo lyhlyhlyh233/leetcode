@@ -1,8 +1,6 @@
-package leetcode.Jzoffer.review1.day1;
+package leetcode.jzoffer.review1.day1;
 
 import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Deque;
 
 /**
